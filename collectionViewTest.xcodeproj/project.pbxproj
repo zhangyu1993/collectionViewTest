@@ -17,6 +17,9 @@
 		C61282CE1D6FE4FE001BF81E /* collectionViewTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C61282CD1D6FE4FE001BF81E /* collectionViewTestUITests.m */; };
 		C61282DD1D6FE7F6001BF81E /* ZYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C61282DC1D6FE7F6001BF81E /* ZYCollectionViewCell.m */; };
 		C61282E01D6FF073001BF81E /* ZYCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61282DF1D6FF073001BF81E /* ZYCollectionReusableView.m */; };
+		C61283231D7042E0001BF81E /* WaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C61283221D7042E0001BF81E /* WaterFallLayout.m */; };
+		C62295A01D76CAE40083AE27 /* ZYHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C622959E1D76CAE40083AE27 /* ZYHeaderView.m */; };
+		C62295A11D76CAE40083AE27 /* ZYHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C622959F1D76CAE40083AE27 /* ZYHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,11 @@
 		C61282DC1D6FE7F6001BF81E /* ZYCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCollectionViewCell.m; sourceTree = "<group>"; };
 		C61282DE1D6FF073001BF81E /* ZYCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCollectionReusableView.h; sourceTree = "<group>"; };
 		C61282DF1D6FF073001BF81E /* ZYCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCollectionReusableView.m; sourceTree = "<group>"; };
+		C61283211D7042E0001BF81E /* WaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFallLayout.h; sourceTree = "<group>"; };
+		C61283221D7042E0001BF81E /* WaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFallLayout.m; sourceTree = "<group>"; };
+		C622959D1D76CAE40083AE27 /* ZYHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYHeaderView.h; sourceTree = "<group>"; };
+		C622959E1D76CAE40083AE27 /* ZYHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYHeaderView.m; sourceTree = "<group>"; };
+		C622959F1D76CAE40083AE27 /* ZYHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 		C61282A71D6FE4FE001BF81E /* collectionViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				C61283211D7042E0001BF81E /* WaterFallLayout.h */,
+				C61283221D7042E0001BF81E /* WaterFallLayout.m */,
 				C61282AB1D6FE4FE001BF81E /* AppDelegate.h */,
 				C61282AC1D6FE4FE001BF81E /* AppDelegate.m */,
 				C61282AE1D6FE4FE001BF81E /* ViewController.h */,
@@ -115,6 +125,9 @@
 				C61282DC1D6FE7F6001BF81E /* ZYCollectionViewCell.m */,
 				C61282DE1D6FF073001BF81E /* ZYCollectionReusableView.h */,
 				C61282DF1D6FF073001BF81E /* ZYCollectionReusableView.m */,
+				C622959D1D76CAE40083AE27 /* ZYHeaderView.h */,
+				C622959E1D76CAE40083AE27 /* ZYHeaderView.m */,
+				C622959F1D76CAE40083AE27 /* ZYHeaderView.xib */,
 				C61282B11D6FE4FE001BF81E /* Main.storyboard */,
 				C61282B41D6FE4FE001BF81E /* Assets.xcassets */,
 				C61282B61D6FE4FE001BF81E /* LaunchScreen.storyboard */,
@@ -253,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62295A11D76CAE40083AE27 /* ZYHeaderView.xib in Resources */,
 				C61282B81D6FE4FE001BF81E /* LaunchScreen.storyboard in Resources */,
 				C61282B51D6FE4FE001BF81E /* Assets.xcassets in Resources */,
 				C61282B31D6FE4FE001BF81E /* Main.storyboard in Resources */,
@@ -280,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61283231D7042E0001BF81E /* WaterFallLayout.m in Sources */,
+				C62295A01D76CAE40083AE27 /* ZYHeaderView.m in Sources */,
 				C61282B01D6FE4FE001BF81E /* ViewController.m in Sources */,
 				C61282AD1D6FE4FE001BF81E /* AppDelegate.m in Sources */,
 				C61282E01D6FF073001BF81E /* ZYCollectionReusableView.m in Sources */,
@@ -512,6 +528,7 @@
 				C61282D41D6FE4FE001BF81E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C61282D51D6FE4FE001BF81E /* Build configuration list for PBXNativeTarget "collectionViewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +537,7 @@
 				C61282D71D6FE4FE001BF81E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C61282D81D6FE4FE001BF81E /* Build configuration list for PBXNativeTarget "collectionViewTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +546,7 @@
 				C61282DA1D6FE4FE001BF81E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,25 +9,21 @@
         <scene sceneID="Zua-wu-gbz">
             <objects>
                 <collectionViewController id="WHc-2Z-vhN" customClass="ViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LnA-Fd-zM6">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" dataMode="prototypes" id="LnA-Fd-zM6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M1X-Pb-wtl">
-                            <size key="itemSize" width="81" height="68"/>
-                            <size key="headerReferenceSize" width="0.0" height="90"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="SGg-qm-Qor" customClass="WaterFallLayout"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="JlX-RK-6HE" customClass="ZYCollectionViewCell">
-                                <rect key="frame" x="0.0" y="90" width="81" height="68"/>
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="81" height="68"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azz-6q-7OH" userLabel="cellTitLab">
-                                            <rect key="frame" x="10" y="10" width="61" height="21"/>
+                                            <rect key="frame" x="10" y="10" width="30" height="41"/>
+                                            <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" id="rb8-YO-TJK"/>
                                             </constraints>
@@ -38,12 +34,14 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="azz-6q-7OH" firstAttribute="leading" secondItem="JlX-RK-6HE" secondAttribute="leading" constant="10" id="2S0-qy-CBY"/>
                                     <constraint firstItem="azz-6q-7OH" firstAttribute="top" secondItem="JlX-RK-6HE" secondAttribute="top" constant="10" id="Hsa-fU-o6T"/>
                                     <constraint firstAttribute="bottom" secondItem="azz-6q-7OH" secondAttribute="bottom" constant="10" id="dVm-7B-bhR"/>
                                     <constraint firstAttribute="trailing" secondItem="azz-6q-7OH" secondAttribute="trailing" constant="10" id="zrK-Qx-TKx"/>
                                 </constraints>
+                                <size key="customSize" width="50" height="50"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="dVm-7B-bhR"/>
@@ -54,32 +52,6 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="ly7-eR-Df4" customClass="ZYCollectionReusableView">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLab" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyg-Px-Yxg">
-                                    <rect key="frame" x="10" y="60" width="355" height="21"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="1MD-Px-qrT"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="tintColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstItem="Hyg-Px-Yxg" firstAttribute="top" secondItem="ly7-eR-Df4" secondAttribute="top" constant="60" id="0d1-IZ-1HN"/>
-                                <constraint firstAttribute="trailing" secondItem="Hyg-Px-Yxg" secondAttribute="trailing" constant="10" id="5j0-U4-Xwk"/>
-                                <constraint firstItem="Hyg-Px-Yxg" firstAttribute="leading" secondItem="ly7-eR-Df4" secondAttribute="leading" constant="10" id="cdT-Cs-HE8"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="decLab" destination="Hyg-Px-Yxg" id="pPS-em-Juc"/>
-                                <outlet property="decLabHeightLayout" destination="1MD-Px-qrT" id="GAv-P6-g3W"/>
-                            </connections>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="WHc-2Z-vhN" id="EpH-BH-cSS"/>
                             <outlet property="delegate" destination="WHc-2Z-vhN" id="WgR-nH-JFd"/>
@@ -87,12 +59,12 @@
                     </collectionView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="headerHeightLayout" destination="M1X-Pb-wtl" id="c6p-s0-8Gg"/>
+                        <outlet property="waterLayout" destination="SGg-qm-Qor" id="55E-Xt-2UE"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggG-N5-CDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242.5" y="97.5"/>
+            <point key="canvasLocation" x="-524.5" y="-157.5"/>
         </scene>
     </scenes>
 </document>

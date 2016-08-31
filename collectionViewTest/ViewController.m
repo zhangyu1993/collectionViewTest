@@ -9,8 +9,13 @@
 #import "ViewController.h"
 #import "ZYCollectionViewCell.h"
 #import "ZYCollectionReusableView.h"
-@interface ViewController ()
+#import "WaterFallLayout.h"
+#import "ZYHeaderView.h"
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+@interface ViewController () <WaterFallLayoutDelegate>
 
+@property (weak, nonatomic) IBOutlet WaterFallLayout *waterLayout;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *headerHeightLayout;
 @property (nonatomic, strong) NSString *s;
 @property (nonatomic, assign) CGFloat headerHeight;
@@ -22,7 +27,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.collectionView registerClass:[ZYCollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
-//    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+    [self.collectionView registerClass:[ZYCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"ZYHeaderView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"h"];
+    _waterLayout.rowMargin = 5;
+    _waterLayout.columnMargin = 5;
+    _waterLayout.columnCount = 2;
+    _waterLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    _waterLayout.headerHeight = 200;
+    _waterLayout.delegate = self;
+    _waterLayout.headerH = 0;
     self.collectionView.backgroundColor = [UIColor redColor];
     [self loadCollectionData];
 }
@@ -33,25 +46,32 @@
     _s = str;
     CGRect textSize = [str boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17] } context:nil];
     _headerHeight = 60 + textSize.size.height + 10;
+    _waterLayout.headerH = textSize.size.height + 10;
     [self.collectionView reloadData];
+}
+
+-(CGFloat)waterFlowLayout:(WaterFallLayout *)waterFlowLayout heightForWidth:(CGFloat)width indexPath:(NSIndexPath *)indexPath
+{
+    
+    return indexPath.item * 10;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    NSLog(@"numberOfSectionsInCollectionView");
+   // NSLog(@"numberOfSectionsInCollectionView");
     return 1;
    
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSLog(@"numberOfItemsInSection");
+   // NSLog(@"numberOfItemsInSection");
     return 50;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellForItemAtIndexPath");
+  //  NSLog(@"cellForItemAtIndexPath");
     ZYCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     cell.titLab.text = [NSString stringWithFormat:@"fhsjfhsjhfsdjhfkjsdhfk%ld",indexPath.item];
     [cell layoutIfNeeded];
@@ -61,11 +81,14 @@
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"viewForSupplementaryElementOfKind");
-    ZYCollectionReusableView *v = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-    _headerHeightLayout.headerReferenceSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, _headerHeight);
-    [v setDecData:_s];
+    ZYHeaderView*v = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"h" forIndexPath:indexPath];
+    [v setText:_s block:^(CGFloat h) {
+        
+    }];
+    
     return v;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
